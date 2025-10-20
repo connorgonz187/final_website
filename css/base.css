@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* Final Website Base Stylesheet */
+
+address, article, aside, blockquote, body, cite, 
+div, dl, dt, dd, em, figcaption, figure, footer, 
+h1, h2, h3, h4, h5, h6, header, html, img, 
+li, main, nav, nav a, ol, p, section, span, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Set the default page element styles */
+
+ul,
+ol {
+  list-style: none;
+}
+
+nav ul {
+  list-style: none;
+  list-style-image: none;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+/* Display Types */
+
+@media (max-aspect-ratio: 1/1) {
+}
