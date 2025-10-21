@@ -9,12 +9,12 @@ li, main, nav, nav a, ol, p, section, span, ul {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   vertical-align: baseline;
   box-sizing: border-box;
   font-family: "Michroma", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 10px;
   background: transparent;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -40,4 +40,24 @@ nav a {
 /* Display Types */
 
 @media (max-aspect-ratio: 1/1) {
+  * {
+    font-size: 80%;
+  }
+    
+    #navlist {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-top: 1px solid #ddd;
+        justify-content: center;
+    }
+
+
+
 }
