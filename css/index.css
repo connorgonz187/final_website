@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+/* Grid Layout for the entire page */
+body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 750px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header grid area */
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 1.5em;
+  background-color: transparent;
+}
+
+#name {
+  grid-column: 1;
+  justify-self: start;
+
+  font-size: 1em;
+}
+
+#navlist {
+  grid-column: 2;
+  justify-self: end;
+}
+
+/* Horizontal navigation with separators */
+#navlist nav ul {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+
+#navlist nav ul li {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+#navlist nav ul li a {
+  text-decoration: none;
+
+  padding: 0;
+}
+
+#navlist nav ul li a:hover {
+  color: #a0bcdb;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+#navlist a {
+  font-size: 2em;
+}
+
+/* Main content area - centered on screen */
+main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+}
+
+body h1 {
+  font-size: 4em;
+  padding: 0.5em;
+}
+
+body p {
+  font-size: 3em;
+  width: 45%;
+}
