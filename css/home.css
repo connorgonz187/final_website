@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-
-
-
-
 /* Grid Layout for the entire page */
 body {
     display: grid;
@@ -23,7 +19,7 @@ header {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    padding: 1rem;
+    padding: 1em;
     background-color: #f8f9fa;
     border-bottom: 1px solid #ddd;
     display: transparent;
@@ -34,15 +30,19 @@ header {
     grid-column: 1;
     justify-self: start;
     color: #2e2e2e;
-    font-size: 3rem;
+    font-size: 1em;
 }
 
 #navlist {
     grid-column: 2;
     justify-self: end;
     color: #2e2e2e;
-    font-size: 3rem;
 }
+
+#navlist li {
+    font-size: 2em;
+}
+
 
 /* Horizontal navigation with separators */
 #navlist nav ul {
@@ -70,6 +70,8 @@ header {
 
 #navlist nav ul li a:hover {
     color: #4a90e2;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 /* Main content area - centered on screen */
@@ -80,7 +82,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    padding: 2em;
     color: #2e2e2e;
 }
 
