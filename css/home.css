@@ -1,7 +1,105 @@
 @charset "UTF-8";
 
-ul {
+/* Grid Layout for the entire page */
+body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header grid area */
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Name positioning */
+#name {
+    grid-column: 1;
+    justify-self: start;
+}
+
+/* Navigation positioning */
+#navlist {
+    grid-column: 2;
+    justify-self: end;
+}
+
+/* Horizontal navigation with pipe separators */
+#navlist nav ul {
+    display: flex;
+    gap: 0;
+    align-items: center;
+}
+
+#navlist nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+#navlist nav ul li:not(:last-child)::after {
+    content: " | ";
+    margin: 0 0.5rem;
+    color: #666;
+}
+
+#navlist nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.25rem 0;
+}
+
+#navlist nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Main content area - centered on screen */
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    min-height: calc(100vh - 120px); /* Adjust based on header height */
+}
+
+/* Footer area (if you add one later) */
+footer {
+    grid-area: footer;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+
+}
+
+header {
+    position: fixed;
     top: 0;
+    width: 100%;
+}
+
+div#navlist, div#name {
     margin: 0;
     padding: 0;
 }
