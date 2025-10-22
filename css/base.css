@@ -1,11 +1,61 @@
 @charset "UTF-8";
 
+/* Palette 
+Ice Blue (#C3D6DF) – light background or section fill
+
+Sky Mist (#A5C4CE) – secondary background or card base
+
+Soft Slate (#88AFBB) – borders, UI elements, or muted text
+
+Cool Steel (#6D99A6) – accent for buttons or highlights
+
+Deep Marine (#527F8E) – main text or header color
+*/
+
+/* Glass */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
 /* Final Website Base Stylesheet */
 
-address, article, aside, blockquote, body, cite, 
-div, dl, dt, dd, em, figcaption, figure, footer, 
-h1, h2, h3, h4, h5, h6, header, html, img, 
-li, main, nav, nav a, ol, p, section, span, ul {
+address,
+article,
+aside,
+blockquote,
+body,
+cite,
+div,
+dl,
+dt,
+dd,
+em,
+figcaption,
+figure,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+img,
+li,
+main,
+nav,
+nav a,
+ol,
+p,
+section,
+span,
+ul {
   margin: 0;
   padding: 0;
   border: 0;
@@ -19,7 +69,18 @@ li, main, nav, nav a, ol, p, section, span, ul {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: #4a90e2;
+  color: #527F8E;
+}
+
+body {
+  display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Set the default page element styles */
@@ -29,13 +90,17 @@ ol {
   list-style: none;
 }
 
-nav ul {
+ul {
   list-style: none;
   list-style-image: none;
 }
 
-nav a {
+a {
   text-decoration: none;
+}
+
+a:hover {
+  color: #6D99A6;
 }
 
 /* Display Types */
@@ -44,21 +109,33 @@ nav a {
   * {
     font-size: 80%;
   }
-    
-    #navlist {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        grid-area: footer;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        padding: 1rem;
-        background-color: #f8f9fa;
-        border-top: 1px solid #ddd;
-        justify-content: center;
-    }
+
+  #navlist {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+    justify-content: center;
+  }
+}
 
 
 
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+html {
+  animation: fadeIn 0.5s ease-in;
 }

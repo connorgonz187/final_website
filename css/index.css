@@ -1,16 +1,18 @@
 @charset "UTF-8";
 
+
 /* Grid Layout for the entire page */
+
+
 body {
-  display: grid;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
   grid-template-rows: auto 1fr auto;
-  min-height: 750px;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(76, 167, 179, 0.5)
+    ),
+    linear-gradient(225deg, rgba(23, 57, 87, 0.5), rgba(91, 136, 168, 0.7));
 }
 
 /* Header grid area */
@@ -20,14 +22,15 @@ header {
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: 1.5em;
-  background-color: transparent;
+  background: transparent;
 }
+
 
 #name {
   grid-column: 1;
   justify-self: start;
+  font-size: .75em;
 
-  font-size: 1em;
 }
 
 #navlist {
@@ -50,14 +53,24 @@ header {
 
 #navlist nav ul li a {
   text-decoration: none;
-
   padding: 0;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-#navlist nav ul li a:hover {
-  color: #a0bcdb;
-  text-decoration: underline;
-  text-underline-offset: 5px;
+#navlist nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #6d99a6;
+  transition: width 0.4s ease;
+}
+
+#navlist nav ul li a:hover::after {
+  width: 100%;
 }
 
 #navlist a {
@@ -73,14 +86,56 @@ main {
   align-items: center;
   text-align: center;
   padding: 2em;
+  height: 80%;
+}
+
+body a {
+  font-style: italic;
+  font-weight: bold;
+  color: inherit;
 }
 
 body h1 {
   font-size: 4em;
-  padding: 0.5em;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
 }
 
 body p {
   font-size: 3em;
   width: 45%;
+  margin-bottom: 1em;
+  padding: 1em 1.5em;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.social-link {
+  color: #527F8E;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  padding: 0.5em;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.social-link:hover {
+  color: #6D99A6;
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(82, 127, 142, 0.3);
+}
+
+.social-link img {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.1);
 }
