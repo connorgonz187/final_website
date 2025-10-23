@@ -12,6 +12,13 @@ Cool Steel (#6D99A6) – accent for buttons or highlights
 Deep Marine (#527F8E) – main text or header color
 */
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 /* Glass */
 .glass {
   background: rgba(255, 255, 255, 0.15);
@@ -69,12 +76,12 @@ ul {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: #527F8E;
+  color: #527f8e;
 }
 
 body {
   display: grid;
-    grid-template-areas:
+  grid-template-areas:
     "header"
     "main"
     "footer";
@@ -100,32 +107,76 @@ a {
 }
 
 a:hover {
-  color: #6D99A6;
+  color: #6d99a6;
 }
 
-/* Display Types */
-
+/* Portrait/Square Screens (Mobile phones, tablets in portrait) */
 @media (max-aspect-ratio: 1/1) {
   * {
     font-size: 80%;
   }
 
+  body {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-rows: auto 1fr auto;
+    padding-bottom: 80px;
+  }
+
+  header {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+  }
+
+  #name {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    margin-bottom: 0.5rem;
+  }
+
   #navlist {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
-    grid-area: footer;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding: 1rem;
-    background-color: #f8f9fa;
+    z-index: 1000;
+    background: rgba(248, 249, 250, 0.95);
+    backdrop-filter: blur(10px);
     border-top: 1px solid #ddd;
-    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  #navlist nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #navlist nav ul li {
+    flex: 1;
+    text-align: center;
+    min-width: 60px;
+  }
+
+  #navlist nav ul li a {
+    display: block;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 1rem;
+    margin-bottom: 2rem;
   }
 }
-
-
 
 /* Animations */
 @keyframes fadeIn {
@@ -138,4 +189,149 @@ a:hover {
 }
 html {
   animation: fadeIn 0.5s ease-in;
+}
+
+/* Print Styles */
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    margin: 1in;
+    size: auto;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  #navlist,
+  .social-icons,
+  .social-link,
+  button,
+  input[type="submit"],
+  input[type="button"] {
+    display: none !important;
+  }
+
+  header {
+    background: none !important;
+    border: none !important;
+    padding: 0.5in 0 !important;
+    backdrop-filter: none !important;
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+
+  #name {
+    text-align: center;
+    font-size: 24pt !important;
+    margin-bottom: 0.25in;
+    color: black !important;
+  }
+
+  #name h1 {
+    font-size: 24pt !important;
+    margin: 0;
+    padding: 0 !important;
+  }
+  main {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black !important;
+    page-break-after: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  main h1 {
+    font-size: 20pt !important;
+    margin: 0.5in 0 0.25in 0 !important;
+    padding: 0 !important;
+    text-align: center;
+  }
+
+  p {
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    margin: 0.25in 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  .glass,
+  .glass-light,
+  .glass-dark,
+  .glass-brand {
+    background: none !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0 !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    padding: 0.25in !important;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.25in 0;
+  }
+
+  th,
+  td {
+    border: 1px solid #000;
+    padding: 0.1in;
+    text-align: left;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
 }
