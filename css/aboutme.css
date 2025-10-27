@@ -50,8 +50,6 @@ header {
   grid-column: 1;
   justify-self: start;
   font-size: 0.5em;
-  width: fit-content;
-  display: inline-block;
 }
 
 #aboutme h1 {
@@ -65,43 +63,10 @@ header {
   justify-self: end;
 }
 
-/* Horizontal navigation with separators */
-#navlist nav ul {
-  display: flex;
-  gap: 0;
-  align-items: center;
-}
-
-#navlist nav ul li {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-}
-
-#navlist nav ul li a {
-  text-decoration: none;
-  padding: 0;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-#navlist nav ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #6d99a6;
-  transition: width 0.4s ease;
-}
-
-#navlist nav ul li a:hover::after {
-  width: 100%;
-}
-
-#navlist a {
-  font-size: 1em;
+body > section > p > a {
+  font-style: italic;
+  font-weight: bold;
+  color: inherit;
 }
 
 p {
