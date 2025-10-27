@@ -4,7 +4,7 @@
 
 body {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "header"
     "main"
     "footer";
@@ -27,7 +27,6 @@ header {
   grid-template-columns: 1fr auto;
   align-items: center;
   padding: 1.5em;
-  background: transparent;
 }
 
 #name {
@@ -121,11 +120,9 @@ footer {
   justify-content: center;
   align-items: center;
   padding-top: 1em;
-  font-size: .5em;
+  font-size: 0.5em;
   width: 155%;
-  
 }
-
 
 /* Social Media Icons */
 .social-icons {
