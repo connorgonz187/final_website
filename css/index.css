@@ -144,50 +144,8 @@ footer {
     margin-bottom: 0;
   }
 
-  #navlist {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 1rem;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  #navlist nav ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  #navlist nav ul li {
-    flex: 1;
-    text-align: center;
-    min-width: 60px;
-  }
-
-  #navlist nav ul li a {
-    display: block;
-    padding: 0.8rem 0.5rem;
-    font-size: 1rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
-
-  #navlist nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-  }
-
-  /* Remove desktop nav separators on mobile */
-  #navlist nav ul li:not(:last-child)::after {
+  /* Hide desktop navigation in header on mobile */
+  header #navlist {
     display: none;
   }
 

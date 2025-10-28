@@ -102,3 +102,12 @@ footer {
   padding: 1em;
   width: 100%;
 }
+
+@media (max-aspect-ratio: 1/1) {
+  header {
+  width: 75%;
+   font-size: 1.5em;
+   margin: auto;
+   padding: auto;
+  }
+}
