@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 /* Grid Layout for the entire page */
+html {
+  overflow-y: hidden;
+}
 
 body {
   display: grid;
@@ -39,7 +42,6 @@ header {
   grid-column: 2;
   justify-self: end;
 }
-
 
 /* Main content area - centered on screen */
 main {

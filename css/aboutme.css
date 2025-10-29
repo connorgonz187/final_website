@@ -110,4 +110,7 @@ footer {
    margin: auto;
    padding: auto;
   }
+  #navlist a {
+    color: rgb(66, 66, 66);
+  }
 }
