@@ -14,13 +14,7 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   margin: 0;
-  padding: 0;
-  background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.5),
-      rgba(76, 167, 179, 0.5)
-    ),
-    linear-gradient(225deg, rgba(23, 57, 87, 0.5), rgba(91, 136, 168, 0.7));
+  padding: 0; 
 }
 
 /* Header grid area */

@@ -1,15 +1,6 @@
 @charset "UTF-8";
 
-html {
-  min-height: 100vh;
-  background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.5),
-      rgba(76, 167, 179, 0.5)
-    ),
-    linear-gradient(225deg, rgba(23, 57, 87, 0.5), rgba(91, 136, 168, 0.7));
-  font-size: 0.75em;
-}
+
 
 body {
   min-height: 100vh;
