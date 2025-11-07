@@ -63,6 +63,36 @@ main {
   font-size: 1.2em;
 }
 
+.funny-checkbox-container {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1em;
+}
+
+.funny-checkbox-container label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.funny-checkbox-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.funny-checkbox-container .checkbox-text {
+  transition: all 0.3s ease;
+}
+
+.funny-checkbox-container input[type="checkbox"]:checked + .checkbox-text {
+  text-decoration: line-through;
+  color: rgba(76, 167, 179, 0.8);
+  font-style: italic;
+}
+
 /* Table Styles */
 .schedule-table {
   width: 100%;
