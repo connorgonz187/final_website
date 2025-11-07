@@ -150,9 +150,23 @@ button {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-#submitbutton {
-  color: white;
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
 }
+
+#submitbutton, #resetbutton {
+  color: white;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
 
 /* Mobile Responsive */
 @media (max-aspect-ratio: 1/1) {

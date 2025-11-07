@@ -1,1 +1,121 @@
 @charset "UTF-8";
+
+html {
+  min-height: 100vh;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(76, 167, 179, 0.5)
+    ),
+    linear-gradient(225deg, rgba(23, 57, 87, 0.5), rgba(91, 136, 168, 0.7));
+  font-size: 0.75em;
+  overflow-y: scroll;
+}
+
+/* Header Styles */
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 2em;
+}
+
+#sinclair {
+  grid-column: 1;
+  justify-self: start;
+  font-size: 0.5em;
+  padding: 1em;
+}
+
+#navlist {
+  grid-column: 2;
+  justify-self: end;
+}
+
+/* Schedule Section */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 100px; /* Add space for the fixed header */
+}
+
+.schedule-section {
+  padding: 2em;
+  margin: 1em auto;
+  max-width: 1200px;
+  width: 90%;
+  border-radius: 15px;
+}
+
+.schedule-section h2 {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5em;
+  font-size: 1.2em;
+}
+
+/* Table Styles */
+.schedule-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 1em;
+  text-align: center;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.schedule-table th {
+  background: rgba(23, 57, 87, 0.6);
+  font-weight: bold;
+}
+
+.schedule-table td {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.schedule-table tbody tr:hover td {
+  background: rgba(76, 167, 179, 0.2);
+}
+
+.schedule-table tfoot td {
+  font-style: italic;
+  background: rgba(23, 57, 87, 0.4);
+  font-size: 0.7em;
+}
+
+/* Mobile Responsive */
+@media (max-aspect-ratio: 1/1) {
+  .schedule-section {
+    padding: 1em;
+    margin: 0.5em;
+    font-size: 0.8em;
+  }
+
+  .schedule-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 0.8em;
+  }
+}
